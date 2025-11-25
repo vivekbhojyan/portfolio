@@ -1,4 +1,4 @@
-* General Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -50,7 +50,6 @@ hr {
 }
 
 
-/* --- Header & Navigation --- */
 header {
     background-color: var(--card-bg);
     padding: 20px 0;
@@ -145,7 +144,6 @@ nav a:hover {
 }
 
 
-/* --- Sections --- */
 section {
     padding: 40px 20px;
 }
@@ -156,7 +154,6 @@ h3 {
     margin-bottom: 30px;
 }
 
-/* Skills Grid */
 .skills-grid {
     display: flex;
     justify-content: space-around;
@@ -191,7 +188,6 @@ h3 {
     font-size: 1.05em;
 }
 
-/* Project Cards */
 .project-card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -232,11 +228,9 @@ h3 {
 
 .focus-card {
     border-top-color: #e8cd7b;
-     /* A differentiating color for the AI focus */
-}
+    }
 
 
-/* Contact Section */
 #contact {
     text-align: center;
     padding-bottom: 50px;
@@ -248,7 +242,6 @@ h3 {
 }
 
 
-/* --- Footer --- */
 footer {
     background-color: var(--secondary-color);
     color: white;
@@ -263,7 +256,6 @@ footer a {
 }
 
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .hero-content {
         flex-direction: column;
@@ -271,7 +263,7 @@ footer a {
     }
 
     .hero-image {
-        order: -1; /* Move image to the top on small screens */
+        order: -1; 
     }
 
     h1 {
