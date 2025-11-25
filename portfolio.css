@@ -280,3 +280,16 @@ footer a {
         gap: 15px;
     }
 }
+.vv {
+    transition: all 0.2s ease;
+}
+
+.vv:hover {
+    background-color: rgb(243, 164, 164);
+    transform: translateY(5px);
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+}
