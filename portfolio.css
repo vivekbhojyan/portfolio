@@ -138,8 +138,8 @@ nav a:hover {
 }
 
 .primary-btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
+    background-color: #2588f2;
+    transform: translateY(4px);
     text-decoration: none;
 }
 
@@ -239,6 +239,14 @@ h3 {
 .contact-links p {
     margin: 10px 0;
     font-size: 1.1em;
+}
+.contact-links a{
+    color: #007BFF;
+    text-decoration: underline;
+}
+.contact-links a:hover{
+    color:black;
+    text-decoration: none;
 }
 
 
