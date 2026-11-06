@@ -27,6 +27,6 @@ module.exports = async (req, res) => {
 
         return res.status(200).json(data);
     } catch (error) {
-        return res.status(500).json({ error: error.message ||error: "Could not load analytics" });
+        return res.status(500).json({ error: error.message || "Could not load analytics" });
     }
 };
