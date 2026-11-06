@@ -144,9 +144,13 @@
                     }
                 });
 
-                if (!response.ok) {
-                    throw new Error("Incorrect password or unavailable analytics.");
-                }
+                const result = await response.json();
+
+if (!response.ok) {
+    throw new Error(result.error || "Analytics request failed.");
+}
+
+const rows = result;
 
                 const rows = await response.json();
 
