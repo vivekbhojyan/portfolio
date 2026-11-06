@@ -3,145 +3,322 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vivek Kumar - B.Tech CSE Portfolio</title>
+    <meta name="description" content="Portfolio of Vivek Kumar, B.Tech CSE student, AI and web developer.">
+    <title>Vivek Kumar | Portfolio</title>
     <link rel="stylesheet" href="portfolio.css">
 </head>
+
 <body>
-    <header id="hero" class="container">
-        <div class="hero-content">
-            <div class="hero-text">
-                <p class="greeting">Hello, I'm</p>
-                <h1>Vivek Kumar.</h1>
-                <h2>B.Tech CSE Student & Aspiring AI Developer.</h2>
-                <p class="intro-description">
-                    A 2nd-year CSE student at ABES Engineering College, Ghaziabad (AKTU), focused on blending Web Development with the power of Artificial Intelligence. I build solutions that are not just functional, but smart and engaging.
-                </p>
-                <a href="#projects" class="btn primary-btn">View My Work</a>
-            </div>
-            <div class="hero-image">
-                <img src="meclg.jpg" alt="Vivek Kumar Professional Photo">
-            </div>
-        </div>
-        
-        <nav>
-            <ul>
+    <header class="hero" id="home">
+        <nav class="navbar container">
+            <a class="brand" href="#home">Vivek<span>.</span></a>
+
+            <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume" target="_blank">Video Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+
+        <div class="hero-content container">
+            <div class="hero-text">
+                <p class="eyebrow">Hello, I'm</p>
+                <h1>Vivek Kumar</h1>
+                <h2>B.Tech CSE Student | AI &amp; Web Developer</h2>
+
+                <p class="hero-description">
+                    I build AI-powered and full-stack web solutions, with interests in
+                    automation, data processing, and practical software development.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+
+                <div class="hero-links">
+                    <a href="https://github.com/vivekbhojyan" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://www.linkedin.com/in/vivek-bhojyan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="mailto:vivekbij05@gmail.com">Email</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="meclg.jpg" alt="Vivek Kumar">
+            </div>
+        </div>
     </header>
 
     <main>
-        <section id="about" class="container">
-            <h3>About Me</h3>
-            <p>
-                Currently in my second year, I am passionate about computer science fundamentals, especially Data Structures and Algorithms (DSA). My primary interest lies in the intersection of **Web Technologies (HTML, CSS, JS) and Machine Learning/AI. I am actively learning to integrate intelligent features into web applications to create dynamic user experiences.
-            </p>
-        </section>
+        <section id="about" class="section container">
+            <div class="section-heading">
+                <p class="eyebrow">Introduction</p>
+                <h3>About Me</h3>
+            </div>
 
-        <hr>
+            <div class="about-card">
+                <p>
+                    I am a B.Tech Computer Science and Engineering student at ABES Engineering College.
+                    I enjoy applying web development and Artificial Intelligence to solve practical problems.
+                    My work includes AI-powered platforms, automation workflows, NLP applications, and
+                    satellite-data visualization.
+                </p>
 
-        <section id="skills" class="container">
-            <h3>Technical Toolkit</h3>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Programming Languages</h4>
-                    <ul>
-                        <li>C</li>
-                        <li>C++</li>
-                        <li>Python</li>
-                        <li>Java</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Web Development</h4>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript (JS)</li>
-                        <li>Bootstrap (for quick UI/UX)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>AI/ML & Tools</h4>
-                    <ul>
-                        <li>Basic AI/ML Concepts</li>
-                        <li>Git & GitHub (Version Control)</li>
-                        <li>VS Code</li>
-                    </ul>
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <strong>600+</strong>
+                        <span>DSA Problems Solved</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>2-Star</strong>
+                        <span>CodeChef Rating</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>7.96</strong>
+                        <span>Current CGPA</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <hr>
-
-        <section id="projects" class="container">
-            <h3>Featured Projects</h3>
-            <div class="project-card-grid">
-
-                <div class="project-card">
-                    <h4>Student Complaint Box</h4>
-                    <p class="tech-stack">Tech: HTML, CSS, JavaScript (Front-End Logic)</p>
-                    <p>
-                        A transparent, web-based system designed to allow students to submit, track, and receive timely feedback on their institutional grievances, moving beyond manual processes.
-                    </p>
-                    <a href="https://github.com/vivekbhojyan/vivek-kumar" target="_blank" class="project-link">GitHub Link  &rarr;</a>
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">What I Work With</p>
+                    <h3>Technical Skills</h3>
                 </div>
 
-                <div class="project-card">
-                    <h4>Gamified App for Environmental Studies</h4>
-                    <p class="tech-stack">Tech: HTML, CSS, JavaScript (Gamification Logic)</p>
-                    <p>
-                        A concept for an interactive web application that uses game mechanics (like points, badges, and leaderboards) to motivate students to participate in and increase awareness of environmental initiatives.
-                    </p>
-                    <a href="https://github.com/vivekbhojyan/vivek-kumar" target="_blank" class="project-link">GitHub Link  &rarr;</a>
-                </div>
+                <div class="skills-grid">
+                    <article class="skill-card">
+                        <h4>Languages</h4>
+                        <p>Java, Python, C, JavaScript, SQL, HTML, CSS</p>
+                    </article>
 
-                <div class="project-card focus-card">
-                    <h4>AI in Web Development Focus</h4>
-                    <p class="tech-stack">Area of Interest: AI/ML Integration</p>
-                    <p>
-                        My current focus is on learning how to integrate basic AI/ML models (e.g., a simple sentiment analyzer for the Complaint Box comments) into web frontends using frameworks like TensorFlow.js or API calls.
-                    </p>
-                    <a href="#skills" class="project-link">View Skills &rarr;</a>
-                </div>
+                    <article class="skill-card">
+                        <h4>Frameworks &amp; Libraries</h4>
+                        <p>React.js, Next.js, Node.js, Express.js, REST APIs</p>
+                    </article>
 
+                    <article class="skill-card">
+                        <h4>Databases &amp; Tools</h4>
+                        <p>MySQL, MongoDB Atlas, PostgreSQL, Supabase, Git, GitHub, Docker, Vercel, Netlify, Render, n8n, Brevo</p>
+                    </article>
+
+                    <article class="skill-card">
+                        <h4>AI/ML</h4>
+                        <p>Linear Regression, Logistic Regression, K-Means Clustering, AI Automation, LLM-based Data Processing, API Integration</p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <hr>
-        <section id="resume" class="container"
-         style="display: flex; justify-content: center; align-items: center;">
-
-    <button class="vv" style="border-radius: 20px; background-color: rgb(64, 198, 251);">
-        <a href="https://drive.google.com/file/d/1pSiJc8WlLk1EXXoYIAt4aZj7kwV-EB0U/view?usp=drivesdk">
-            <h3 style="margin: 20px;">Video Resume</h3>
-            <h6 style="text-align: center; margin-bottom: 8px;">(click here)</h6>
-        </a>
-    </button>
-
-</section>
-
-<hr>
-
-
-    <section id="contact" class="container">
-            <h3>Get In Touch</h3>
-            <p>I am open to discussing internship opportunities, collaborative projects, or general tech discussions.</p>
-            <div class="contact-links">
-                <p>Email: <a href="mailto:vivekbij05@gmail.com">vivekbij05@gmail.com</a></p>
-                <p><a href="https://www.linkedin.com/in/vivek-kumar-abes/" target="_blank">LinkedIn</a></p>
-                <p><a href="https://github.com/vivekbhojyan/vivek-kumar" target="_blank">GitHub</a></p>
-                
+        <section id="experience" class="section container">
+            <div class="section-heading">
+                <p class="eyebrow">Professional Work</p>
+                <h3>Experience</h3>
             </div>
-    </section>
+
+            <div class="timeline">
+                <article class="timeline-card">
+                    <div class="timeline-title">
+                        <div>
+                            <h4>Member</h4>
+                            <p>ABES Applied AI Innovation Cell</p>
+                        </div>
+                        <span>Present</span>
+                    </div>
+                    <p>
+                        Contribute to AI-focused projects and teach junior students AI concepts,
+                        tools, and practical implementation.
+                    </p>
+                </article>
+
+                <article class="timeline-card">
+                    <div class="timeline-title">
+                        <div>
+                            <h4>Website Developer</h4>
+                            <p>Maruti Chemicals</p>
+                        </div>
+                    </div>
+                    <p>
+                        Designed the website UI, developed backend functionality, integrated frontend
+                        components, and deployed the website on the company’s custom domain.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" class="section section-alt">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Selected Work</p>
+                    <h3>Featured Projects</h3>
+                </div>
+
+                <div class="project-card-grid">
+                    <article class="project-card featured-card">
+                        <div class="project-number">01</div>
+                        <h4>NoteNest</h4>
+                        <p class="tech-stack">React, TypeScript, Node.js, MongoDB Atlas, JWT, REST APIs, Groq AI</p>
+                        <p>
+                            AI-powered study-material platform with note evaluation and content processing
+                            across <strong>5+ study-resource workflows</strong>.
+                        </p>
+                        <div class="project-actions">
+                            <a href="https://notenest-332f.onrender.com/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                            <a href="https://github.com/vivekbhojyan/NoteNest" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">02</div>
+                        <h4>TerraX</h4>
+                        <p class="tech-stack">Python, FastAPI, Three.js, Sentinel-1, Sentinel-2, DEM</p>
+                        <p>
+                            Satellite-based 3D terrain platform integrating <strong>3 geospatial data sources</strong>
+                            for terrain reconstruction, visualization, and map-based exploration.
+                        </p>
+                        <div class="project-actions">
+                            <a href="https://terrax.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                            <a href="https://github.com/vivekbhojyan/TerraX" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">03</div>
+                        <h4>TruthLens</h4>
+                        <p class="tech-stack">NLP, Fake-News Detection</p>
+                        <p>
+                            Fake-news detection application that uses Natural Language Processing to analyze news content.
+                        </p>
+                        <div class="project-actions">
+                            <a href="https://truthhlens.streamlit.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                            <a href="https://github.com/vivekbhojyan/TruthLens" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">04</div>
+                        <h4>AutoLeetCode Question Sender</h4>
+                        <p class="tech-stack">n8n Automation</p>
+                        <p>
+                            Private personal automation built with n8n to automatically send LeetCode questions.
+                        </p>
+                        <p class="private-project">Private automation — no public link available.</p>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">05</div>
+                        <h4>Maruti Chemicals Website</h4>
+                        <p class="tech-stack">UI Design, Backend Development, Deployment</p>
+                        <p>
+                            Website designed and developed for Maruti Chemicals, including UI, backend
+                            functionality, and custom-domain deployment.
+                        </p>
+                        <div class="project-actions">
+                            <a href="https://marutichemicals.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                            <a href="https://github.com/vivekbhojyan/MarutiChemicals" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">06</div>
+                        <h4>BriefByte</h4>
+                        <p class="tech-stack">News Aggregation Platform</p>
+                        <p>
+                            API-driven news aggregation platform covering <strong>8 categories</strong> and
+                            processing <strong>100+ articles</strong> per update cycle.
+                        </p>
+                        <div class="project-actions">
+                            <a href="https://github.com/vivekbhojyan/BriefByte-frontend-" target="_blank" rel="noopener noreferrer">Frontend Code</a>
+                            <a href="https://github.com/vivekbhojyan/BriefByte-Backend-" target="_blank" rel="noopener noreferrer">Backend Code</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">07</div>
+                        <h4>Telegram Inventory Management Bot</h4>
+                        <p class="tech-stack">Telegram Bot, Inventory Management</p>
+                        <p>
+                            Telegram bot created to manage inventory-related tasks through a conversational interface.
+                        </p>
+                        <div class="project-actions">
+                            <a href="https://t.me/Vivekbotifybot" target="_blank" rel="noopener noreferrer">Open Bot</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="section container">
+            <div class="section-heading">
+                <p class="eyebrow">Highlights</p>
+                <h3>Achievements &amp; Certifications</h3>
+            </div>
+
+            <div class="achievement-grid">
+                <article class="achievement-card">
+                    <h4>Competitive Programming</h4>
+                    <p>Solved <strong>600+ Data Structures and Algorithms problems</strong> across coding platforms.</p>
+                </article>
+
+                <article class="achievement-card">
+                    <h4>CodeChef</h4>
+                    <p>Achieved a <strong>2-Star rating</strong> through competitive programming.</p>
+                </article>
+
+                <article class="achievement-card">
+                    <h4>Certifications</h4>
+                    <ul>
+                        <li>AWS — Generative AI Foundations</li>
+                        <li>NASSCOM — Certified Exploratory Data Analysis</li>
+                        <li>HCL GUVI — Making Apps Using AI</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="extracurricular" class="section section-alt">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Beyond Projects</p>
+                    <h3>Extracurricular</h3>
+                </div>
+
+                <div class="about-card">
+                    <p>
+                        Led and collaborated with teams in multiple hackathons, contributing to the development
+                        and presentation of technology-based solutions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section container">
+            <div class="section-heading">
+                <p class="eyebrow">Let’s Connect</p>
+                <h3>Get In Touch</h3>
+            </div>
+
+            <div class="contact-card">
+                <p>
+                    I am open to internships, collaborative projects, and technology discussions.
+                </p>
+
+                <div class="contact-links">
+                    <a href="mailto:vivekbij05@gmail.com">vivekbij05@gmail.com</a>
+                    <a href="tel:+918958898090">+91-8958898090</a>
+                    <a href="https://www.linkedin.com/in/vivek-bhojyan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/vivekbhojyan" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Vivek Kumar | B.Tech CSE (2nd Year)</p>
+        <p>&copy; 2026 Vivek Kumar. Built with HTML, CSS, and JavaScript.</p>
     </footer>
 
     <script src="portfolio.js"></script>
