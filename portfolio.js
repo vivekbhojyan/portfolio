@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     loadLeetCodeHeatmap();
+    setupClickTracking();
 });
 
 async function loadLeetCodeHeatmap() {
@@ -86,4 +87,39 @@ function getActivityLevel(submissions) {
     if (submissions <= 5) return "level-2";
     if (submissions <= 9) return "level-3";
     return "level-4";
+}
+function setupClickTracking() {
+    const links = document.querySelectorAll(
+        ".project-actions a, .hero-actions a, .stat-grid a, .hero-links a, .contact-links a"
+    );
+
+    links.forEach((link) => {
+        link.addEventListener("click", () => {
+            const projectCard = link.closest(".project-card");
+            const projectName = projectCard
+                ? projectCard.querySelector("h4")?.textContent.trim()
+                : "";
+
+            const buttonName = link.textContent.trim();
+            const label = projectName
+                ? `${projectName} — ${buttonName}`
+                : buttonName;
+
+            const key = `${projectName}-${buttonName}`
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-|-$/g, "");
+
+            fetch("/api/track-click", {
+                method: "POST",
+                keepalive: true,
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ key, label })
+            }).catch(() => {
+                // Clicking links must still work if analytics is unavailable.
+            });
+        });
+    });
 }

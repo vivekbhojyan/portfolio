@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Portfolio Analytics</title>
+    <link rel="stylesheet" href="../portfolio.css">
+
+    <style>
+        .analytics-page {
+            min-height: 100vh;
+            padding: 70px 0;
+        }
+
+        .analytics-card {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .analytics-card h1 {
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .analytics-card > p {
+            margin-bottom: 22px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .password-form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .password-form input {
+            width: min(100%, 280px);
+            padding: 11px 13px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font: inherit;
+        }
+
+        .password-form button {
+            padding: 11px 18px;
+            border: 0;
+            border-radius: 8px;
+            color: white;
+            background: var(--primary);
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .analytics-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .analytics-table th,
+        .analytics-table td {
+            padding: 13px 10px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .analytics-table th {
+            color: var(--muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .analytics-table td:last-child,
+        .analytics-table th:last-child {
+            text-align: right;
+        }
+
+        .analytics-message {
+            margin-top: 16px;
+            color: var(--muted);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="analytics-page">
+        <div class="container">
+            <section class="analytics-card">
+                <h1>Portfolio Analytics</h1>
+                <p>Private click-count dashboard</p>
+
+                <form id="password-form" class="password-form">
+                    <input
+                        id="analytics-password"
+                        type="password"
+                        placeholder="Analytics password"
+                        required
+                    >
+                    <button type="submit">View Analytics</button>
+                </form>
+
+                <p id="message" class="analytics-message"></p>
+
+                <table id="analytics-table" class="analytics-table" hidden>
+                    <thead>
+                        <tr>
+                            <th>Button / Link</th>
+                            <th>Clicks</th>
+                        </tr>
+                    </thead>
+                    <tbody id="analytics-body"></tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        const form = document.getElementById("password-form");
+        const message = document.getElementById("message");
+        const table = document.getElementById("analytics-table");
+        const body = document.getElementById("analytics-body");
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const password = document.getElementById("analytics-password").value;
+            const token = btoa(`vivek:${password}`);
+
+            message.textContent = "Loading...";
+
+            try {
+                const response = await fetch("/api/analytics", {
+                    headers: {
+                        Authorization: `Basic ${token}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error("Incorrect password or unavailable analytics.");
+                }
+
+                const rows = await response.json();
+
+                body.innerHTML = "";
+
+                rows.forEach((row) => {
+                    const tr = document.createElement("tr");
+                    const label = document.createElement("td");
+                    const clicks = document.createElement("td");
+
+                    label.textContent = row.label;
+                    clicks.textContent = row.clicks;
+
+                    tr.append(label, clicks);
+                    body.appendChild(tr);
+                });
+
+                table.hidden = false;
+                message.textContent = rows.length
+                    ? ""
+                    : "No tracked clicks yet.";
+            } catch (error) {
+                table.hidden = true;
+                message.textContent = error.message;
+            }
+        });
+    </script>
+</body>
+</html>
