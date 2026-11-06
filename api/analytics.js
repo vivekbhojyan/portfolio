@@ -1,16 +1,11 @@
 module.exports = async (req, res) => {
-    const authorization = req.headers.authorization || "";
-    const expected = Buffer.from(
-        `vivek:${process.env.ANALYTICS_PASSWORD}`
-    ).toString("base64");
+    const suppliedPassword = req.headers["x-analytics-password"];
 
-    if (authorization !== `Basic ${expected}`) {
-        res.setHeader(
-            "WWW-Authenticate",
-            'Basic realm="Portfolio Analytics", charset="UTF-8"'
-        );
-
-        return res.status(401).json({ error: "Unauthorized" });
+    if (
+        !process.env.ANALYTICS_PASSWORD ||
+        suppliedPassword !== process.env.ANALYTICS_PASSWORD
+    ) {
+        return res.status(401).json({ error: "Incorrect password" });
     }
 
     try {

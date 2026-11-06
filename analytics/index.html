@@ -133,14 +133,14 @@
             event.preventDefault();
 
             const password = document.getElementById("analytics-password").value;
-            const token = btoa(`vivek:${password}`);
+            
 
             message.textContent = "Loading...";
 
             try {
                 const response = await fetch("/api/analytics", {
                     headers: {
-                        Authorization: `Basic ${token}`
+                        "x-analytics-password": password
                     }
                 });
 
