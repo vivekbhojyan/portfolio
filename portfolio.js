@@ -62,7 +62,15 @@ function renderHeatmap(calendar, heatmap) {
         currentDate.setUTCDate(startDate.getUTCDate() + day);
 
         const dateKey = currentDate.toISOString().slice(0, 10);
-        const submissions = Number(calendar[dateKey] || 0);
+const timestampInSeconds = Math.floor(currentDate.getTime() / 1000);
+const timestampInMilliseconds = currentDate.getTime();
+
+const submissions = Number(
+    calendar[dateKey] ??
+    calendar[String(timestampInSeconds)] ??
+    calendar[String(timestampInMilliseconds)] ??
+    0
+);
 
         const cell = document.createElement("span");
         cell.className = `heatmap-cell ${getActivityLevel(submissions)}`;
