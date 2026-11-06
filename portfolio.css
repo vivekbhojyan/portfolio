@@ -325,6 +325,7 @@ a {
     flex-direction: column;
     padding: 25px;
     border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
     border-radius: var(--radius);
     background: var(--surface);
     box-shadow: 0 8px 20px rgba(28, 60, 110, 0.05);
@@ -336,9 +337,7 @@ a {
     box-shadow: var(--shadow);
 }
 
-.featured-card {
-    border-top: 4px solid var(--accent);
-}
+
 
 .project-number {
     margin-bottom: 14px;
