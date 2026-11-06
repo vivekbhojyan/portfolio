@@ -146,13 +146,11 @@
 
                 const result = await response.json();
 
-if (!response.ok) {
-    throw new Error(result.error || "Analytics request failed.");
-}
+                if (!response.ok) {
+                    throw new Error(result.error || "Analytics request failed.");
+                }
 
-const rows = result;
-
-                const rows = await response.json();
+                const rows = result;
 
                 body.innerHTML = "";
 
