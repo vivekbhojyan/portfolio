@@ -96,30 +96,26 @@ function setupClickTracking() {
     links.forEach((link) => {
         link.addEventListener("click", () => {
             const projectCard = link.closest(".project-card");
-            const projectName = projectCard
-                ? projectCard.querySelector("h4")?.textContent.trim()
-                : "";
+            const projectName = projectCard?.querySelector("h4")?.textContent.trim() || "";
 
             const buttonName = link.textContent.trim();
-            const label = projectName
-                ? `${projectName} — ${buttonName}`
-                : buttonName;
+            const label =
+                link.dataset.trackLabel ||
+                (projectName ? `${projectName} — ${buttonName}` : buttonName);
 
-            const key = `${projectName}-${buttonName}`
-                .toLowerCase()
-                .replace(/[^a-z0-9]+/g, "-")
-                .replace(/^-|-$/g, "");
+            const key =
+                link.dataset.trackKey ||
+                `${projectName}-${buttonName}`
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/^-|-$/g, "");
 
             fetch("/api/track-click", {
                 method: "POST",
                 keepalive: true,
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ key, label })
-            }).catch(() => {
-                // Clicking links must still work if analytics is unavailable.
-            });
+            }).catch(() => {});
         });
     });
 }
