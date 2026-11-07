@@ -24,6 +24,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loadLeetCodeHeatmap();
     setupClickTracking();
+
+    const videoResumeButton = document.querySelector('[data-track-key="video-resume"]');
+
+if (videoResumeButton) {
+    videoResumeButton.addEventListener("click", () => {
+        fetch("/api/track-click", {
+            method: "POST",
+            keepalive: true,
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                key: "video-resume",
+                label: "Video Resume"
+            })
+        }).catch(() => {});
+    });
+}
 });
 
 async function loadLeetCodeHeatmap() {
@@ -90,8 +108,8 @@ function getActivityLevel(submissions) {
 }
 function setupClickTracking() {
     const links = document.querySelectorAll(
-        ".project-actions a, .hero-actions a, .stat-grid a, .hero-links a, .contact-links a"
-    );
+    '.project-actions a, .hero-actions a:not([data-track-key]), .stat-grid a, .hero-links a, .contact-links a'
+);
 
     links.forEach((link) => {
         link.addEventListener("click", () => {
